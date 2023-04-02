@@ -3,6 +3,7 @@ let users = []
 let turn = ''
 let board = []
 
+
 //Connecting from Server
 var socket = io('http://localhost:5000',
     {
@@ -79,7 +80,7 @@ function renderBoard() {
     let boardDiv = document.getElementById('board');
     let boardHTML = '';
     for (let i = 0; i < board.length; i++) {
-        boardHTML += `<div onclick = "handleClick(${i})"  class="cursor-pointer w-32 h-32 text-5xl text-white grid place-content-center board-2 border  ${board[i] === 'o' ? 'bg-red-500' : board[i] == 'x' ? 'bg-green-500' : ""}"> ${board[i]}</div>`
+        boardHTML += `<div onclick = "handleClick(${i})"  class="cursor-pointer w-20 h-20 text-5xl text-white grid place-content-center board-2 border  ${board[i] === 'o' ? 'bg-red-500' : board[i] == 'x' ? 'bg-green-500' : ""}"> ${board[i]}</div>`
     }
     boardDiv.innerHTML = boardHTML;
 }
